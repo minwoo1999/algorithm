@@ -11,9 +11,9 @@ def dfs(graph,v,visited):
     print(v,end=" ")
     
     for i in graph[v]:
-        
+
         if not visited[i]:
-            print("방문하지않은",i)
+
             dfs(graph,i,visited)
             
             
