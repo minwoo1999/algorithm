@@ -19,7 +19,7 @@ while(queue):
     now=queue.popleft() # now에는 1이 담기고 queue빔
     
     # 현재 도시에서 이동할수있는 모든 도시 확인
-    print(now)
+    
     for next_nod in graph[now]:
         
         if distance[next_nod]==-1:
