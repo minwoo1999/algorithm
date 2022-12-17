@@ -1,0 +1,57 @@
+자바에서 문자열을 하나씩 꺼낼때
+
+String [] array_word;
+array_word=my_string.split("");
+
+for(int i=0;i<array_word.length;i++){
+           
+        }
+
+
+a-z 까지 A-Z까지 빈문자열로 전부 변환시키고 해당하는숙자를 다 더함
+
+String [] transfer_word=my_string.replaceAll("[a-zA-Z]","").split("");
+        
+        for(int i=0;i<transfer_word.length;i++){
+            answer+=Integer.parseInt(transfer_word[i]);
+        }
+
+
+
+분수의 덧셈 유클리드 호제법을 통해서 최대공약수를 구하고 분자분모 모두 더함
+
+
+class Solution {
+    public int[] solution(int denum1, int num1, int denum2, int num2) {
+        int[] answer =new int[2];
+        
+        int denum=(denum1*num2)+(num1*denum2);
+        int num=num1*num2;
+        
+        int mod=gcd(denum,num);
+        
+        denum=denum/mod;
+        num=num/mod;
+        
+        answer[0]=denum;
+        answer[1]=num;
+        return answer;
+    }
+    
+    
+    public static int gcd(int a, int b) {
+        // a가 b보다 큰 경우에 대해서 유클리드 호제법 수행.
+        if (a <= b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b , a % b);
+    }
+}
+
+        
